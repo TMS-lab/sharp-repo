@@ -36,6 +36,7 @@ extensions = [
     'sphinx.ext.mathjax',
 ]
 exclude_patterns = ['_build', '**.ipynb_checkpoints']
+autosummary_generate = ['Sharp_Working_Guide.rst']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
