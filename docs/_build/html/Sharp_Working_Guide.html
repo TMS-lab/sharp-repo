@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Working with XNAT using PyXNAT &#8212; Strengthening Human Adaptive Reasoning and Problem-solving (SHARP) Data Repository 1.0 documentation</title>
+    <title>Working with XNAT using PyXNAT &#8212; SHARP Data Repository 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -43,253 +43,31 @@
 <h1>Working with XNAT using PyXNAT<a class="headerlink" href="#working-with-xnat-using-pyxnat" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-pyxnat-module">
 <h2>Download PyXNAT Module<a class="headerlink" href="#download-pyxnat-module" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Collecting pyxnat
-  Downloading pyxnat-1.0.0.0.tar.gz (540kB)
-[K    100% |████████████████████████████████| 542kB 1.6MB/s ta 0:00:011
-[?25hRequirement already satisfied: requests in /Library/Python/2.7/site-packages (from pyxnat)
-Requirement already satisfied: lxml in /Library/Python/2.7/site-packages (from pyxnat)
-Requirement already satisfied: idna&lt;2.6,&gt;=2.5 in /Library/Python/2.7/site-packages (from requests-&gt;pyxnat)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Python/2.7/site-packages (from requests-&gt;pyxnat)
-Requirement already satisfied: urllib3&lt;1.23,&gt;=1.21.1 in /Library/Python/2.7/site-packages (from requests-&gt;pyxnat)
-Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /Library/Python/2.7/site-packages (from requests-&gt;pyxnat)
-Building wheels for collected packages: pyxnat
-  Running setup.py bdist_wheel for pyxnat ... [?25ldone
-[?25h  Stored in directory: /Users/raminder/Library/Caches/pip/wheels/2d/79/f1/4a31fb18b992650bbd099574ce9675286db813ad3556282ccc
-Successfully built pyxnat
-Installing collected packages: pyxnat
-Successfully installed pyxnat-1.0.0.0
-</pre></div>
-</div>
 <div class="section" id="connect-to-server-enter-user-password">
 <h3>Connect to server: Enter user : password<a class="headerlink" href="#connect-to-server-enter-user-password" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>User: admin
-········
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;SHARP_1A&#39;</span><span class="p">,</span> <span class="s1">&#39;FAST&#39;</span><span class="p">,</span> <span class="s1">&#39;INSIGHT&#39;</span><span class="p">,</span> <span class="s1">&#39;SHARP_2B&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="different-types-of-datatypes-supported-by-xnat">
 <h2>Different types of datatypes supported by XNAT<a class="headerlink" href="#different-types-of-datatypes-supported-by-xnat" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;xnat:qcAssessmentData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:investigatorData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:qcManualAssessorData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:petmrSessionData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:subjectData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:crSessionData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;val:protocolData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:subjectVariablesData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:petSessionData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:pVisitData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:mrSessionData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:ctSessionData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:projectData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:eegScanData&#39;</span><span class="p">,</span>
- <span class="s1">&#39;behavioral:scores&#39;</span><span class="p">,</span>
- <span class="s1">&#39;xnat:eegSessionData&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="check-number-of-subject">
 <h2>Check number of Subject<a class="headerlink" href="#check-number-of-subject" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">92</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="loading-the-project">
 <h2>Loading the project<a class="headerlink" href="#loading-the-project" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Project</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">FAST</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="working-with-subject-data">
 <h2>Working with Subject Data<a class="headerlink" href="#working-with-subject-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">92</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="working-with-mri-session-data">
 <h2>Working with MRI Session Data<a class="headerlink" href="#working-with-mri-session-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">159</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">subject_label</span><span class="p">,</span><span class="n">session_id</span>
-<span class="mi">0001</span><span class="p">,</span><span class="n">SHARP_E00746</span>
-<span class="mi">0001</span><span class="p">,</span><span class="n">SHARP_E00747</span>
-<span class="mi">0002</span><span class="p">,</span><span class="n">SHARP_E00467</span>
-<span class="mi">0002</span><span class="p">,</span><span class="n">SHARP_E00463</span>
-<span class="mi">0003</span><span class="p">,</span><span class="n">SHARP_E00664</span>
-<span class="mi">0003</span><span class="p">,</span><span class="n">SHARP_E00663</span>
-<span class="mi">0004</span><span class="p">,</span><span class="n">SHARP_E00008</span>
-<span class="mi">0004</span><span class="p">,</span><span class="n">SHARP_E00001</span>
-<span class="mi">0005</span><span class="p">,</span><span class="n">SHARP_E00752</span>
-<span class="mi">0005</span><span class="p">,</span><span class="n">SHARP_E00765</span>
-<span class="mi">0007</span><span class="p">,</span><span class="n">SHARP_E00140</span>
-<span class="mi">0007</span><span class="p">,</span><span class="n">SHARP_E00141</span>
-<span class="mi">0008</span><span class="p">,</span><span class="n">SHARP_E00639</span>
-<span class="mi">0008</span><span class="p">,</span><span class="n">SHARP_E00640</span>
-<span class="mi">0009</span><span class="p">,</span><span class="n">SHARP_E00147</span>
-<span class="mi">0009</span><span class="p">,</span><span class="n">SHARP_E01907</span>
-<span class="mi">0010</span><span class="p">,</span><span class="n">SHARP_E00045</span>
-<span class="mi">0010</span><span class="p">,</span><span class="n">SHARP_E00044</span>
-<span class="mi">0011</span><span class="p">,</span><span class="n">SHARP_E00714</span>
-<span class="mi">0011</span><span class="p">,</span><span class="n">SHARP_E00713</span>
-<span class="mi">0013</span><span class="p">,</span><span class="n">SHARP_E00766</span>
-<span class="mi">0013</span><span class="p">,</span><span class="n">SHARP_E00767</span>
-<span class="mi">0014</span><span class="p">,</span><span class="n">SHARP_E00475</span>
-<span class="mi">0015</span><span class="p">,</span><span class="n">SHARP_E00741</span>
-<span class="mi">0015</span><span class="p">,</span><span class="n">SHARP_E00742</span>
-<span class="mi">0016</span><span class="p">,</span><span class="n">SHARP_E00009</span>
-<span class="mi">0016</span><span class="p">,</span><span class="n">SHARP_E00010</span>
-<span class="mi">0017</span><span class="p">,</span><span class="n">SHARP_E00643</span>
-<span class="mi">0017</span><span class="p">,</span><span class="n">SHARP_E00644</span>
-<span class="mi">0019</span><span class="p">,</span><span class="n">SHARP_E00245</span>
-<span class="mi">0020</span><span class="p">,</span><span class="n">SHARP_E00471</span>
-<span class="mi">0021</span><span class="p">,</span><span class="n">SHARP_E00033</span>
-<span class="mi">0022</span><span class="p">,</span><span class="n">SHARP_E00651</span>
-<span class="mi">0022</span><span class="p">,</span><span class="n">SHARP_E01648</span>
-<span class="mi">0023</span><span class="p">,</span><span class="n">SHARP_E00526</span>
-<span class="mi">0023</span><span class="p">,</span><span class="n">SHARP_E00522</span>
-<span class="mi">0024</span><span class="p">,</span><span class="n">SHARP_E00684</span>
-<span class="mi">0024</span><span class="p">,</span><span class="n">SHARP_E00685</span>
-<span class="mi">0025</span><span class="p">,</span><span class="n">SHARP_E00721</span>
-<span class="mi">0026</span><span class="p">,</span><span class="n">SHARP_E00628</span>
-<span class="mi">0026</span><span class="p">,</span><span class="n">SHARP_E00632</span>
-<span class="mi">0030</span><span class="p">,</span><span class="n">SHARP_E00351</span>
-<span class="mi">0030</span><span class="p">,</span><span class="n">SHARP_E00355</span>
-<span class="mi">0031</span><span class="p">,</span><span class="n">SHARP_E00740</span>
-<span class="mi">0031</span><span class="p">,</span><span class="n">SHARP_E00739</span>
-<span class="mi">0032</span><span class="p">,</span><span class="n">SHARP_E00496</span>
-<span class="mi">0032</span><span class="p">,</span><span class="n">SHARP_E00500</span>
-<span class="mi">0034</span><span class="p">,</span><span class="n">SHARP_E00058</span>
-<span class="mi">0034</span><span class="p">,</span><span class="n">SHARP_E00057</span>
-<span class="mi">0036</span><span class="p">,</span><span class="n">SHARP_E00407</span>
-<span class="mi">0037</span><span class="p">,</span><span class="n">SHARP_E00360</span>
-<span class="mi">0037</span><span class="p">,</span><span class="n">SHARP_E00363</span>
-<span class="mi">0038</span><span class="p">,</span><span class="n">SHARP_E00668</span>
-<span class="mi">0038</span><span class="p">,</span><span class="n">SHARP_E00667</span>
-<span class="mi">0040</span><span class="p">,</span><span class="n">SHARP_E00037</span>
-<span class="mi">0040</span><span class="p">,</span><span class="n">SHARP_E00038</span>
-<span class="mi">0041</span><span class="p">,</span><span class="n">SHARP_E00734</span>
-<span class="mi">0041</span><span class="p">,</span><span class="n">SHARP_E00733</span>
-<span class="mi">0042</span><span class="p">,</span><span class="n">SHARP_E00450</span>
-<span class="mi">0043</span><span class="p">,</span><span class="n">SHARP_E01651</span>
-<span class="mi">0043</span><span class="p">,</span><span class="n">SHARP_E00035</span>
-<span class="mi">0044</span><span class="p">,</span><span class="n">SHARP_E00552</span>
-<span class="mi">0044</span><span class="p">,</span><span class="n">SHARP_E00556</span>
-<span class="mi">0046</span><span class="p">,</span><span class="n">SHARP_E00705</span>
-<span class="mi">0047</span><span class="p">,</span><span class="n">SHARP_E00249</span>
-<span class="mi">0048</span><span class="p">,</span><span class="n">SHARP_E00022</span>
-<span class="mi">0048</span><span class="p">,</span><span class="n">SHARP_E00023</span>
-<span class="mi">0051</span><span class="p">,</span><span class="n">SHARP_E00652</span>
-<span class="mi">0051</span><span class="p">,</span><span class="n">SHARP_E00653</span>
-<span class="mi">0054</span><span class="p">,</span><span class="n">SHARP_E00728</span>
-<span class="mi">0055</span><span class="p">,</span><span class="n">SHARP_E00689</span>
-<span class="mi">0055</span><span class="p">,</span><span class="n">SHARP_E00688</span>
-<span class="mi">0059</span><span class="p">,</span><span class="n">SHARP_E00636</span>
-<span class="mi">0060</span><span class="p">,</span><span class="n">SHARP_E00712</span>
-<span class="mi">0062</span><span class="p">,</span><span class="n">SHARP_E00385</span>
-<span class="mi">0063</span><span class="p">,</span><span class="n">SHARP_E00680</span>
-<span class="mi">0063</span><span class="p">,</span><span class="n">SHARP_E00679</span>
-<span class="mi">0065</span><span class="p">,</span><span class="n">SHARP_E00708</span>
-<span class="mi">0065</span><span class="p">,</span><span class="n">SHARP_E00709</span>
-<span class="mi">0066</span><span class="p">,</span><span class="n">SHARP_E00726</span>
-<span class="mi">0067</span><span class="p">,</span><span class="n">SHARP_E00047</span>
-<span class="mi">0067</span><span class="p">,</span><span class="n">SHARP_E00046</span>
-<span class="mi">0068</span><span class="p">,</span><span class="n">SHARP_E00129</span>
-<span class="mi">0069</span><span class="p">,</span><span class="n">SHARP_E00265</span>
-<span class="mi">0069</span><span class="p">,</span><span class="n">SHARP_E00269</span>
-<span class="mi">0070</span><span class="p">,</span><span class="n">SHARP_E00600</span>
-<span class="mi">0070</span><span class="p">,</span><span class="n">SHARP_E00596</span>
-<span class="mi">0071</span><span class="p">,</span><span class="n">SHARP_E00029</span>
-<span class="mi">0073</span><span class="p">,</span><span class="n">SHARP_E00237</span>
-<span class="mi">0075</span><span class="p">,</span><span class="n">SHARP_E00297</span>
-<span class="mi">0075</span><span class="p">,</span><span class="n">SHARP_E00307</span>
-<span class="mi">0080</span><span class="p">,</span><span class="n">SHARP_E00139</span>
-<span class="mi">0080</span><span class="p">,</span><span class="n">SHARP_E00138</span>
-<span class="mi">0081</span><span class="p">,</span><span class="n">SHARP_E00719</span>
-<span class="mi">0081</span><span class="p">,</span><span class="n">SHARP_E00718</span>
-<span class="mi">0082</span><span class="p">,</span><span class="n">SHARP_E00457</span>
-<span class="mi">0082</span><span class="p">,</span><span class="n">SHARP_E00456</span>
-<span class="mi">0083</span><span class="p">,</span><span class="n">SHARP_E00724</span>
-<span class="mi">0083</span><span class="p">,</span><span class="n">SHARP_E00725</span>
-<span class="mi">0084</span><span class="p">,</span><span class="n">SHARP_E00459</span>
-<span class="mi">0084</span><span class="p">,</span><span class="n">SHARP_E00458</span>
-<span class="mi">0085</span><span class="p">,</span><span class="n">SHARP_E00731</span>
-<span class="mi">0085</span><span class="p">,</span><span class="n">SHARP_E00732</span>
-<span class="mi">0090</span><span class="p">,</span><span class="n">SHARP_E00112</span>
-<span class="mi">0090</span><span class="p">,</span><span class="n">SHARP_E00110</span>
-<span class="mi">0091</span><span class="p">,</span><span class="n">SHARP_E00564</span>
-<span class="mi">0091</span><span class="p">,</span><span class="n">SHARP_E00561</span>
-<span class="mi">0093</span><span class="p">,</span><span class="n">SHARP_E00743</span>
-<span class="mi">0094</span><span class="p">,</span><span class="n">SHARP_E01655</span>
-<span class="mi">0094</span><span class="p">,</span><span class="n">SHARP_E00681</span>
-<span class="mi">0095</span><span class="p">,</span><span class="n">SHARP_E00332</span>
-<span class="mi">0095</span><span class="p">,</span><span class="n">SHARP_E00336</span>
-<span class="mi">0098</span><span class="p">,</span><span class="n">SHARP_E00028</span>
-<span class="mi">0099</span><span class="p">,</span><span class="n">SHARP_E00039</span>
-<span class="mi">0101</span><span class="p">,</span><span class="n">SHARP_E00624</span>
-<span class="mi">0102</span><span class="p">,</span><span class="n">SHARP_E00241</span>
-<span class="mi">0104</span><span class="p">,</span><span class="n">SHARP_E00024</span>
-<span class="mi">0104</span><span class="p">,</span><span class="n">SHARP_E00025</span>
-<span class="mi">0105</span><span class="p">,</span><span class="n">SHARP_E00399</span>
-<span class="mi">0105</span><span class="p">,</span><span class="n">SHARP_E00403</span>
-<span class="mi">0107</span><span class="p">,</span><span class="n">SHARP_E00641</span>
-<span class="mi">0107</span><span class="p">,</span><span class="n">SHARP_E00642</span>
-<span class="mi">0110</span><span class="p">,</span><span class="n">SHARP_E00722</span>
-<span class="mi">0110</span><span class="p">,</span><span class="n">SHARP_E00723</span>
-<span class="mi">0112</span><span class="p">,</span><span class="n">SHARP_E00608</span>
-<span class="mi">0112</span><span class="p">,</span><span class="n">SHARP_E00605</span>
-<span class="mi">0113</span><span class="p">,</span><span class="n">SHARP_E00645</span>
-<span class="mi">0113</span><span class="p">,</span><span class="n">SHARP_E00646</span>
-<span class="mi">0114</span><span class="p">,</span><span class="n">SHARP_E00446</span>
-<span class="mi">0115</span><span class="p">,</span><span class="n">SHARP_E00398</span>
-<span class="mi">0115</span><span class="p">,</span><span class="n">SHARP_E00395</span>
-<span class="mi">0116</span><span class="p">,</span><span class="n">SHARP_E00229</span>
-<span class="mi">0116</span><span class="p">,</span><span class="n">SHARP_E00225</span>
-<span class="mi">0117</span><span class="p">,</span><span class="n">SHARP_E00006</span>
-<span class="mi">0117</span><span class="p">,</span><span class="n">SHARP_E00007</span>
-<span class="mi">0118</span><span class="p">,</span><span class="n">SHARP_E00735</span>
-<span class="mi">0118</span><span class="p">,</span><span class="n">SHARP_E00736</span>
-<span class="mi">0119</span><span class="p">,</span><span class="n">SHARP_E00699</span>
-<span class="mi">0119</span><span class="p">,</span><span class="n">SHARP_E00700</span>
-<span class="mi">0120</span><span class="p">,</span><span class="n">SHARP_E00620</span>
-<span class="mi">0120</span><span class="p">,</span><span class="n">SHARP_E00616</span>
-<span class="mi">0121</span><span class="p">,</span><span class="n">SHARP_E00748</span>
-<span class="mi">0121</span><span class="p">,</span><span class="n">SHARP_E00749</span>
-<span class="mi">0123</span><span class="p">,</span><span class="n">SHARP_E00649</span>
-<span class="mi">0123</span><span class="p">,</span><span class="n">SHARP_E00650</span>
-<span class="mi">0124</span><span class="p">,</span><span class="n">SHARP_E00730</span>
-<span class="mi">0124</span><span class="p">,</span><span class="n">SHARP_E00729</span>
-<span class="mi">0125</span><span class="p">,</span><span class="n">SHARP_E00026</span>
-<span class="mi">0125</span><span class="p">,</span><span class="n">SHARP_E00027</span>
-<span class="mi">0126</span><span class="p">,</span><span class="n">SHARP_E00745</span>
-<span class="mi">0126</span><span class="p">,</span><span class="n">SHARP_E00744</span>
-<span class="mi">0127</span><span class="p">,</span><span class="n">SHARP_E00032</span>
-<span class="mi">0128</span><span class="p">,</span><span class="n">SHARP_E00031</span>
-<span class="mi">0128</span><span class="p">,</span><span class="n">SHARP_E00030</span>
-<span class="mi">0129</span><span class="p">,</span><span class="n">SHARP_E00280</span>
-<span class="mi">0129</span><span class="p">,</span><span class="n">SHARP_E00283</span>
-<span class="mi">0131</span><span class="p">,</span><span class="n">SHARP_E00042</span>
-<span class="mi">0131</span><span class="p">,</span><span class="n">SHARP_E00043</span>
-<span class="mi">0132</span><span class="p">,</span><span class="n">SHARP_E00453</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="filtering-using-behavioral-scores">
 <h2>Filtering using Behavioral scores<a class="headerlink" href="#filtering-using-behavioral-scores" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">18</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="downloading-the-selective-data">
 <h2>Downloading the selective data<a class="headerlink" href="#downloading-the-selective-data" title="Permalink to this headline">¶</a></h2>
 <p>Lets start with download data for one subject</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;/tmp/FAST_0001_SHARP_E00746_scans_ALL.zip&#39;</span>
-</pre></div>
-</div>
 <p>Now lets write a filer to download the selective data for all the
 subjects</p>
 </div>
@@ -301,7 +79,7 @@ subjects</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Strengthening Human Adaptive Reasoning and Problem-solving (SHARP) Data Repository</a></h1>
+<h1 class="logo"><a href="index.html">SHARP Data Repository</a></h1>
 
 
 
