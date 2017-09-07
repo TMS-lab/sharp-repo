@@ -33,8 +33,7 @@ needs_sphinx = '1.5.3'
 #extensions = ['sphinx.ext.imgmath']
 extensions = [
     'nbsphinx',
-    'sphinx.ext.mathjax',
-]
+    'sphinx.ext.mathjax']
 exclude_patterns = ['_build', '**.ipynb_checkpoints']
 autosummary_generate = ['Sharp_Working_Guide.rst']
 
