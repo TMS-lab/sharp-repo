@@ -23,6 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -42,9 +43,6 @@
 <h1>Working with XNAT using PyXNAT<a class="headerlink" href="#working-with-xnat-using-pyxnat" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-pyxnat-module">
 <h2>Download PyXNAT Module<a class="headerlink" href="#download-pyxnat-module" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>!pip install pyxnat
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span>Collecting pyxnat
   Downloading pyxnat-1.0.0.0.tar.gz (540kB)
 [K    100% |████████████████████████████████| 542kB 1.6MB/s ta 0:00:011
@@ -64,15 +62,6 @@ Successfully installed pyxnat-1.0.0.0
 </div>
 <div class="section" id="connect-to-server-enter-user-password">
 <h3>Connect to server: Enter user : password<a class="headerlink" href="#connect-to-server-enter-user-password" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>import pyxnat
-import os
-
-# connect to XNAT instance
-from pyxnat import Interface
-xnat = Interface(server=&#39;http://sharp.bidmc.harvard.edu:8080&#39;,  cachedir=&#39;/tmp&#39;)
-xnat.select.projects().get()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span>User: admin
 ········
 </pre></div>
@@ -84,9 +73,6 @@ xnat.select.projects().get()
 </div>
 <div class="section" id="different-types-of-datatypes-supported-by-xnat">
 <h2>Different types of datatypes supported by XNAT<a class="headerlink" href="#different-types-of-datatypes-supported-by-xnat" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>xnat.inspect.datatypes()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;xnat:qcAssessmentData&#39;</span><span class="p">,</span>
  <span class="s1">&#39;xnat:investigatorData&#39;</span><span class="p">,</span>
  <span class="s1">&#39;xnat:qcManualAssessorData&#39;</span><span class="p">,</span>
@@ -108,53 +94,25 @@ xnat.select.projects().get()
 </div>
 <div class="section" id="check-number-of-subject">
 <h2>Check number of Subject<a class="headerlink" href="#check-number-of-subject" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>subjects = xnat.select(&#39;/projects/FAST/subjects&#39;)
-subjects.get().__len__()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">92</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-the-project">
 <h2>Loading the project<a class="headerlink" href="#loading-the-project" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>project = xnat.select.project(&#39;FAST&#39;)
-print(project)
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Project</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">FAST</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="working-with-subject-data">
 <h2>Working with Subject Data<a class="headerlink" href="#working-with-subject-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>contraints = [(&#39;xnat:subjectData/SUBJECT_ID&#39;,&#39;LIKE&#39;,&#39;%&#39;),
-                  &#39;AND&#39;, (&#39;xnat:subjectData/PROJECT&#39;, &#39;=&#39;, &#39;FAST&#39;)
-              ]
-table = xnat.select(&#39;xnat:subjectData&#39;, [&#39;xnat:subjectData/PROJECT&#39;,&#39;xnat:subjectData/SUBJECT_ID&#39;,&#39;xnat:subjectData/SUBJECT_LABEL&#39;]).where(contraints)
-table.__len__()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">92</span>
-</pre></div>
-</div>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>print(table)
 </pre></div>
 </div>
 </div>
 <div class="section" id="working-with-mri-session-data">
 <h2>Working with MRI Session Data<a class="headerlink" href="#working-with-mri-session-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>contraints = [(&#39;xnat:mrSessionData/ID&#39;,&#39;LIKE&#39;,&#39;%&#39;),
-                  &#39;AND&#39;, (&#39;xnat:subjectData/PROJECT&#39;, &#39;=&#39;, &#39;FAST&#39;)
-             ]
-table1 = xnat.select(&#39;xnat:mrSessionData&#39;, [&#39;xnat:mrSessionData/SUBJECT_LABEL&#39;,&#39;xnat:mrSessionData/SESSION_ID&#39;]).where(contraints)
-table1.__len__()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">159</span>
-</pre></div>
-</div>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>print(table1)
 </pre></div>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">subject_label</span><span class="p">,</span><span class="n">session_id</span>
@@ -322,14 +280,6 @@ table1.__len__()
 </div>
 <div class="section" id="filtering-using-behavioral-scores">
 <h2>Filtering using Behavioral scores<a class="headerlink" href="#filtering-using-behavioral-scores" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>contraints = [(&#39;xnat:subjectData/SUBJECT_ID&#39;,&#39;LIKE&#39;,&#39;%&#39;),
-                  (&#39;behavioral:scores/VocabScore&#39;, &#39;&gt;=&#39;, &#39;36&#39;),
-                  &#39;AND&#39;, (&#39;xnat:subjectData/PROJECT&#39;, &#39;=&#39;, &#39;FAST&#39;)
-             ]
-table1 = xnat.select(&#39;xnat:subjectData&#39;).where(contraints)
-table1.__len__()
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">18</span>
 </pre></div>
 </div>
@@ -337,34 +287,11 @@ table1.__len__()
 <div class="section" id="downloading-the-selective-data">
 <h2>Downloading the selective data<a class="headerlink" href="#downloading-the-selective-data" title="Permalink to this headline">¶</a></h2>
 <p>Lets start with download data for one subject</p>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span>subject = xnat.select.project(&#39;FAST&#39;).subject(&#39;0001&#39;)
-experiment = subject.experiment(&quot;SHARP_E00746&quot;)
-allscans = experiment.scans()
-allscans.download(&quot;/tmp&quot;, type=&#39;ALL&#39;, extract=False)
-</pre></div>
-</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;/tmp/FAST_0001_SHARP_E00746_scans_ALL.zip&#39;</span>
 </pre></div>
 </div>
 <p>Now lets write a filer to download the selective data for all the
 subjects</p>
-<div class="highlight-ipython2"><div class="highlight"><pre><span></span># Filer can be developed based on the data parameters
-contraints = [(&#39;xnat:mrSessionData/ID&#39;,&#39;LIKE&#39;,&#39;%&#39;),
-                  &#39;AND&#39;, (&#39;xnat:subjectData/PROJECT&#39;, &#39;=&#39;, &#39;FAST&#39;)
-
-list_subjects = xnat.select.project(&#39;FAST&#39;).subjects().where(contraints)
-for list_subject in list_subjects:
-    list_experiments = list_subject.experiments().where(contraints)
-    for list_experiment in list_experiments:
-        print list_experiment
-        scans = list_experiment.scans()
-        try:
-            # Number 2 is for Anatomical data. Similar types can be set for other data types
-            scans.download(&quot;/tmp&quot;, type=&#39;2&#39;, extract=False)
-        except:
-            print &quot;There are no scans to download&quot;
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -384,11 +311,28 @@ for list_subject in list_subjects:
 
 
 <h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Working with XNAT using PyXNAT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-pyxnat-module">Download PyXNAT Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-server-enter-user-password">Connect to server: Enter user : password</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#different-types-of-datatypes-supported-by-xnat">Different types of datatypes supported by XNAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-number-of-subject">Check number of Subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-project">Loading the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-subject-data">Working with Subject Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-mri-session-data">Working with MRI Session Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtering-using-behavioral-scores">Filtering using Behavioral scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-the-selective-data">Downloading the selective data</a></li>
+</ul>
+</li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!</a></li>
   </ul></li>
 </ul>
 </div>
