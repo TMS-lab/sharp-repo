@@ -20,7 +20,7 @@ Adaptive reasoning and problem solving represent crucial skills in increasingly 
 
    About
    API
-   Sharp_Working_Guide.rst
+   Sharp_Working_Guide.html
    ../notebooks/Sharp_Working_Guide.ipynb
    Data Definations
    Reports
