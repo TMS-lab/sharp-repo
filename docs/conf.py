@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'sharp-repo'
+project = u'Strengthening Human Adaptive Reasoning and Problem-solving (SHARP) Data Repository'
 copyright = u'2017, Raminder'
 author = u'Raminder'
 
