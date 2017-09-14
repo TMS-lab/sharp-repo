@@ -35,7 +35,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="SHARP Data Repository 1.0 documentation" href="#"/> 
+    <link rel="top" title="SHARP Data Repository 1.0 documentation" href="#"/>
+        <link rel="next" title="Working with XNAT using PyXNAT" href="Sharp_Working_Guide.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -88,12 +89,14 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Sharp_Working_Guide.html">Working with XNAT using PyXNAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Working_with_EEG_data.html">Working with EEG data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html">Definitions for Parameters Listed in the EEG DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html#parser-file-rf-triggers">Parser File “rf-triggers”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">Publications</a></li>
 </ul>
-</div>
+
             
           
         </div>
@@ -193,6 +196,55 @@
 <h1>Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!<a class="headerlink" href="#welcome-to-strengthening-human-adaptive-reasoning-and-problem-solving-sharp-repository-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Adaptive reasoning and problem solving represent crucial skills in increasingly information-rich working environments. The SHARP research project is a multi-institutional competitive and collaborative effort that seeks to understand the neurobiological substrates of fluid intelligence and its malleability in response to a wide variety of interventions.  This research effort, across all involved institutions collected the largest dataset on the training of fluid intelligence and its possible neural correlates.  To ultimately share this resources to all researchers, a repository has been created to hold this data: <a class="reference external" href="https://sharp.bidmc.harvard.edu">https://sharp.bidmc.harvard.edu</a>.  We have hosted this data using the XNAT data repository infrastructure.  This infrastructure has been extended to fit the data elements of interest, including EEG, quantitative phenotypical information, cognitive assessment and MR imaging data.  At present data includes over 500 research participants, and over 800 imaging sessions. Additional data access tools have been developed for easy researcher which are distributed alongside the data. This repository offers a valuable resource for studies investigating the flexibility of fluid intelligence.</p>
 <img alt="_images/xnat_latest.png" src="_images/xnat_latest.png" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Sharp_Working_Guide.html">Working with XNAT using PyXNAT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#download-pyxnat-module">Download PyXNAT Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Sharp_Working_Guide.html#connect-to-server-enter-user-password">Connect to server: Enter user : password</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#different-types-of-datatypes-supported-by-xnat">Different types of datatypes supported by XNAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#check-number-of-subject">Check number of Subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#loading-the-project">Loading the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#working-with-subject-data">Working with Subject Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#working-with-mri-session-data">Working with MRI Session Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#filtering-using-behavioral-scores">Filtering using Behavioral scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sharp_Working_Guide.html#downloading-the-selective-data">Downloading the selective data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Working_with_EEG_data.html">Working with EEG data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html">Definitions for Parameters Listed in the EEG DATA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#parameters-that-apply-to-many-of-the-generated-files">Parameters That Apply to Many of the Generated Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#parameters-that-are-specific-to-the-rotation-span-executive-function-task">Parameters That Are Specific to the Rotation Span Executive Function Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#parameters-that-are-specific-to-robotfactory">Parameters That Are Specific to RobotFactory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#parameters-that-are-specific-to-the-questionnaires">Parameters That Are S­pecific to the Questionnaires</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#demographic-questionnaire">Demographic Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#physical-activity-questionnaire-1-godin">Physical Activity Questionnaire #1 (Godin)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#physical-activity-questionnaire-2-maq">Physical Activity Questionnaire #2 (MAQ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#acute-side-effects-questionnaire">Acute Side Effects Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#multidimensional-mood-state-questionnaire">Multidimensional Mood State Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#engagement-questionnaire">Engagement Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#sleepiness-questionnaire-1-pre">Sleepiness Questionnaire #1 (Pre)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#sleepiness-questionnaire-2-post">Sleepiness Questionnaire #2 (Post)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#alcohol-caffeine-questionnaire">Alcohol &amp; Caffeine Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#handedness-questionnaire">Handedness Questionnaire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#debriefing-questionnaire">Debriefing Questionnaire</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#parameters-that-are-specific-to-the-eeg-files">Parameters That Are Specific to the EEG Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#eeg-data-files">EEG Data Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data_Definations_Phase1B.html#the-generated-eeg-sum-file">The Generated eeg-sum File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html#parser-file-rf-triggers">Parser File “rf-triggers”</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Definations_Phase1B.html#contents-of-the-rf-triggers-file">Contents of the “rf-triggers” File</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">Publications</a></li>
+</ul>
+</div>
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -210,6 +262,13 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Sharp_Working_Guide.html" class="btn btn-neutral float-right" title="Working with XNAT using PyXNAT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
