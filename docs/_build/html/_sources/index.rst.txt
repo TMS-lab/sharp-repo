@@ -21,8 +21,8 @@ Adaptive reasoning and problem solving represent crucial skills in increasingly 
    About
    API
    Sharp_Working_Guide.rst
-   ../notebooks/Sharp_Working_Guide.ipynb
-   Data Definations
+   Working_with_EEG_data.rst
+   Data_Definations_Phase1B.rst
    Reports
 
 
