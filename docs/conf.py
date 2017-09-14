@@ -127,7 +127,7 @@ htmlhelp_basename = 'sharp-repodoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
-latex_elements = {
+#latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',
@@ -143,15 +143,15 @@ latex_elements = {
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
-}
+#}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'sharp-repo.tex', u'sharp-repo Documentation',
-     u'Raminder', 'manual'),
-]
+#latex_documents = [
+#    (master_doc, 'sharp-repo.tex', u'sharp-repo Documentation',
+#     u'Raminder', 'manual'),
+#]
 
 
 # -- Options for manual page output ---------------------------------------

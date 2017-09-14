@@ -14,17 +14,22 @@ Adaptive reasoning and problem solving represent crucial skills in increasingly 
 .. image :: _static/xnat_latest.png
 
 
-.. toctree::
-   :maxdepth: 3
-   :glob:
+.. only:: latex
+   ..    toctree::
+        :maxdepth: 3
+        :glob:
+        Sharp_Working_Guide.rst
+        Working_with_EEG_data.rst
+        About.rst
 
-   About
-   API
-   Sharp_Working_Guide.rst
-   Working_with_EEG_data.rst
-   Data_Definations_Phase1B.rst
-   Reports
-
+.. only:: html
+   .. 	toctree::
+   	:maxdepth: 3
+   	:glob:
+	Sharp_Working_Guide.rst
+   	Working_with_EEG_data.rst
+   	Data_Definations_Phase1B.rst
+   	About.rst
 
 Indices and tables
 ==================
