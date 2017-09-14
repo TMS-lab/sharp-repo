@@ -1,4 +1,4 @@
-Definitions for Parameters Listed in the EEG DATA
+Definitions for Parameters Listed in the Generated Data for EEG and RobotFactory
 =================================================
 
 All generated files are formatted as two dimensional tables. The rows
