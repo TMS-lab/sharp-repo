@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 22:29:22
+pipeline_index: 0
+subject_id: sub-0001_ses-1
+scan_id: scan_task-resting_run-02
+strategy: _fwhm_6
+workflow_name: motion_correct_to_standard_smooth_0
+wf_status: DONE

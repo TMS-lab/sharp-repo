@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 21:30:16
+pipeline_index: 0
+subject_id: sub-0001_ses-1
+scan_id: scan_anat
+strategy: 
+workflow_name: anat_mni_ants_register_0
+wf_status: DONE

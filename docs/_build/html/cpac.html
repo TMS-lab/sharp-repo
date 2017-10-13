@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C-PAC BIDS Application for SHARP data &mdash; SHARP Data Repository 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SHARP Data Repository 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SHARP Data Repository
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Sharp_Working_Guide.html">Working with XNAT using PyXNAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Working_with_EEG_data.html">Working with EEG data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html">Definitions for Parameters Listed in the Generated Data for EEG and RobotFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html#parser-file-rf-triggers">Parser File “rf-triggers”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SHARP Data Repository</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>C-PAC BIDS Application for SHARP data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cpac.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="c-pac-bids-application-for-sharp-data">
+<h1>C-PAC BIDS Application for SHARP data<a class="headerlink" href="#c-pac-bids-application-for-sharp-data" title="Permalink to this headline">¶</a></h1>
+<p>## Documentation
+Extensive information can be found in the [C-PAC User Guide](<a class="reference external" href="http://fcp-indi.github.com/docs/user/index.html">http://fcp-indi.github.com/docs/user/index.html</a>).</p>
+<p>## Description
+The Configurable Pipeline for the Analysis of Connectomes [C-PAC](<a class="reference external" href="http://fcp-indi.github.io">http://fcp-indi.github.io</a>) is a software for
+performing high-throughput preprocessing and analysis of functional connectomes data using high-performance computers.
+C-PAC is implemented in Python using the Nipype pipelining [[1](#nipype)] library to efficiently combine tools from AFNI
+[[2](#afni)], ANTS [[3](#ants)], and FSL [[4](#fsl)] to achieve high quality and robust automated processing. This
+docker container, when built, is an application for performing participant level analyses. Future releases will include
+group-level analyses, when there is a BIDS standard for handling derivatives and group models.</p>
+<p>## SHARP Data</p>
+<p>Several different individual level analysis are performed on the fMRI data including:</p>
+<ul class="simple">
+<li><strong>Amplitude of low frequency fluctuations (alff) [[10](#alff)]</strong>: the variance of each voxel is calculated after</li>
+</ul>
+<p>bandpass filtering in original space and subsequently written into MNI space at 2mm resolution and spatially smoothed
+using a 6mm FWHM kernel.
+- <strong>Fractional amplitude of low frequency fluctuations (falff) [[11](#falff)]</strong>: Similar to alff except that the
+variance of the bandpassed signal is divided by the total variance (variance of non-bandpassed signal.
+- <strong>Regional homogeniety (ReHo) [[12](#reho)]</strong>: a simultaneous Kendalls correlation is calculated between each
+voxel’s time course and the time courses of the 27 voxels that are face, edge, and corner touching the voxel. ReHo is
+calculated in original space and subsequently written into MNI space at 2mm resolution and spatially smoothed using
+a 6mm FWHM kernel.
+- <strong>Voxel mirrored homotopic connectivity (VMHC) [[13](#vmhc)]</strong>: an non-linear transform is calculated between the
+skull-on anatomical data and a symmetric brain template in 2mm space. Using this transform, processed fMRI data are
+written in to symmetric MNI space at 2mm and the correlation between each voxel and its analog in the contralateral
+hemisphere is calculated. The Fisher transform is applied to the resulting values, which are then spatially smoothed
+using a 6mm FWHM kernel.
+- <strong>Weighted and binarized degree centrality (DC) [[14](#degree)]</strong>: fMRI data is written into MNI space at 2mm
+resolution and spatially smoothed using a 6mm FWHM kernel. The voxel x voxel similarity matrix is calculated by the
+correlation between every pair of voxel time courses and then thresholded so that only the top 5% of correlations
+remain. For each voxel, binarized DC is the number of connections that remain for the voxel after thresholding and
+weighted DC is the average correlation coefficient across the remaining connections.
+- <strong>Eigenvector centrality (EC) [[15](#eigen)]</strong>: fMRI data is written into MNI space at 2mm resolution and spatially
+smoothed using a 6mm FWHM kernel. The voxel x voxel similarity matrix is calculated by the correlation between every
+pair of voxel time courses and then thresholded so that only the top 5% of correlations remain. Weighted EC is
+calculated from the eigenvector corresponding to the largest eigenvalue from an eigenvector decomposition of the
+resulting similarity. Binarized EC, is the first eigenvector of the similarity matrix after setting the non-zero values
+in the resulting matrix are set to 1.
+- <strong>Local functional connectivity density (lFCD) [[16](#lfcd)]</strong>: fMRI data is written into MNI space at 2mm resolution
+and spatially smoothed using a 6mm FWHM kernel. For each voxel, lFCD corresponds to the number of contiguous voxels that
+are correlated with the voxel above 0.6 (r&gt;0.6). This is similar to degree centrality, except only voxels that it only
+includes the voxels that are directly connected to the seed voxel.
+- <strong>10 intrinsic connectivity networks (ICNs) from dual regression [[17](#dr)]</strong>: a template including 10 ICNs from a
+meta-analysis of resting state and task fMRI data [[18](#icn10)] is spatially regressed against the processed fMRI data
+in MNI space. The resulting time courses are entered into a multiple regression with the voxel data in original space to
+calculate individual representations of the 10 ICNs. The resulting networks are written into MNI space at 2mm and then
+spatially smoothed using a 6mm FWHM kernel.
+- <strong>Seed correlation analysis (SCA)</strong>: preprocessed fMRI data is to match template that includes 160 regions of interest
+defined from a meta-analysis of different task results [[19](#do160)]. A time series is calculated for each region from
+the mean of all intra-ROI voxel time series. A seperate functional connectivity map is calculated per ROI by correlating
+its time course with the time courses of every other voxel in the brain. Resulting values are Fisher transformed,
+written into MNI space at 2mm resolution, and then spatiall smoothed using a 6mm FWHM kernel.
+- <strong>Time series extraction</strong>: similar the procedure used for time series analysis, the preprocessed functional data is
+written into MNI space at 2mm and then time series for the various atlases are extracted by averaging within region
+voxel time courses. This procedure was used to generate summary time series for the automated anatomic labelling atlas
+[[20](#aal)], Eickhoff-Zilles atlas [[21](#ez)], Harvard-Oxford atlas [[22](#ho)], Talaraich and Tournoux atlas
+[[23](#tt)], 200 and 400 regions from the spatially constrained clustering voxel timeseries [[24](#cc)], and 160 ROIs
+from a meta-analysis of task results [[19](#do160)]. Time series for 10 ICNs were extracted using spatial regression.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Raminder.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

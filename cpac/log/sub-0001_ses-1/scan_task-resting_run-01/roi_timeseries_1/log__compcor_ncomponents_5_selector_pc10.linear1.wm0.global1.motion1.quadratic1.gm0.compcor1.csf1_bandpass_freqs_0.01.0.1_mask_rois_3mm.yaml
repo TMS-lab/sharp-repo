@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 23:26:33
+pipeline_index: 1
+subject_id: sub-0001_ses-1
+scan_id: scan_task-resting_run-01
+strategy: _compcor_ncomponents_5_selector_pc10.linear1.wm0.global1.motion1.quadratic1.gm0.compcor1.csf1_bandpass_freqs_0.01.0.1_mask_rois_3mm
+workflow_name: roi_timeseries_1
+wf_status: DONE

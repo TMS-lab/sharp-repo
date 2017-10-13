@@ -20,6 +20,8 @@ Adaptive reasoning and problem solving represent crucial skills in increasingly 
    Sharp_Working_Guide.rst
    Working_with_EEG_data.rst
    Data_Definations_Phase1B.rst
+   mriqc.rst
+   cpac.rst
    About.rst
 
 Indices and tables

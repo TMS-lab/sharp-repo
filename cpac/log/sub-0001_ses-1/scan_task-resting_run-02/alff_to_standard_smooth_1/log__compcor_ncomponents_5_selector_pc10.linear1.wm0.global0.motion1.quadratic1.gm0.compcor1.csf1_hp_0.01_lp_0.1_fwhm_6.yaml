@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 22:57:54
+pipeline_index: 1
+subject_id: sub-0001_ses-1
+scan_id: scan_task-resting_run-02
+strategy: _compcor_ncomponents_5_selector_pc10.linear1.wm0.global0.motion1.quadratic1.gm0.compcor1.csf1_hp_0.01_lp_0.1_fwhm_6
+workflow_name: alff_to_standard_smooth_1
+wf_status: DONE

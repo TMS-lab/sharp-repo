@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 22:26:48
+pipeline_index: 1
+subject_id: sub-0001_ses-1
+scan_id: scan_task-resting_run-01
+strategy: 
+workflow_name: apply_ants_warp_mean_functional_to_standard_1
+wf_status: DONE

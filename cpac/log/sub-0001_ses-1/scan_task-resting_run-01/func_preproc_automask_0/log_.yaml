@@ -1,0 +1,8 @@
+version : 1.0.1
+timestamp: 2017-09-26 22:02:55
+pipeline_index: 0
+subject_id: sub-0001_ses-1
+scan_id: scan_task-resting_run-01
+strategy: 
+workflow_name: func_preproc_automask_0
+wf_status: DONE

@@ -1,0 +1,32 @@
+[
+    [
+        "function_str",
+        "def write_to_log(workflow, log_dir, index, inputs, scan_id ):\n    \"\"\"\n    Method to write into log file the status of the workflow run.\n    \"\"\"\n\n    import os\n    import CPAC\n    from nipype import logging\n    iflogger = logging.getLogger('interface')\n\n    version = CPAC.__version__\n\n    subject_id = os.path.basename(log_dir)\n\n    if scan_id == None:\n        scan_id = \"scan_anat\"\n\n    strategy = \"\"\n\n    import time\n    import datetime\n    ts = time.time()\n\n    stamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')\n    try:\n        if workflow!= 'DONE':\n            wf_path = os.path.dirname((os.getcwd()).split(workflow)[1]).strip(\"/\")\n\n            if wf_path and wf_path != \"\":\n                if '/' in wf_path:\n                    scan_id, strategy = wf_path.split('/',1)\n                    scan_id = scan_id.strip('_')\n                    strategy = strategy.replace(\"/\",\"\")\n                else:\n                    scan_id = wf_path.strip('_')\n\n            file_path = os.path.join(log_dir, scan_id, workflow)\n\n            try:\n                os.makedirs(file_path)\n            except Exception:\n                iflogger.info(\"filepath already exist, filepath- %s, curr_dir - %s\"%(file_path, os.getcwd()))\n\n        else:\n            file_path = os.path.join(log_dir, scan_id)\n    except Exception:\n        print \"ERROR in write log\"\n        raise\n\n    try:\n        os.makedirs(file_path)\n    except Exception:\n        iflogger.info(\"filepath already exist, filepath- %s, curr_dir - %s\"%(file_path, os.getcwd()))\n\n    out_file = os.path.join(file_path, 'log_%s.yaml'%strategy)\n\n    f = open(out_file, 'w')\n\n\n    print >>f, \"version : %s\"%(str(version))\n    print >>f, \"timestamp: %s\"%(str(stamp))\n    print >>f, \"pipeline_index: %d\"%(index) \n    print >>f, \"subject_id: %s\"%(subject_id)\n    print >>f, \"scan_id: %s\"%(scan_id)\n    print >>f, \"strategy: %s\"%(strategy)\n    print >>f, \"workflow_name: %s\"%(workflow)\n\n\n\n    iflogger.info(\"CPAC custom log :\")\n\n    if isinstance(inputs, list):\n        inputs = inputs[0]\n\n    if os.path.exists(inputs):\n\n        print >>f,  \"wf_status: DONE\"\n\n        iflogger.info(\" version - %s, timestamp -%s, subject_id -%s, scan_id - %s, strategy -%s, workflow - %s, status -%s\"\\\n                      %(str(version), str(stamp), subject_id, scan_id,strategy,workflow,'COMPLETED') )\n\n    else:\n\n        iflogger.info(\" version - %s, timestamp -%s, subject_id -%s, scan_id - %s, strategy -%s, workflow - %s, status -%s\"\\\n                      %(str(version), str(stamp), subject_id, scan_id,strategy,workflow,'ERROR') )\n\n        print>>f, \"wf_status: ERROR\"\n\n    f.close()\n\n    #os.system(\"/home2/haipan/tmp/C-PAC/scripts/log_py2js.py %s %s\"%(out_file, log_dir))   ###\n\n    return out_file\n"
+    ],
+    [
+        "index",
+        1
+    ],
+    [
+        "inputs",
+        "/outputs/log/sub-0001_ses-1"
+    ],
+    [
+        "log_dir",
+        "/outputs/log/sub-0001_ses-1"
+    ],
+    [
+        "scan_id",
+        "scan_anat"
+    ],
+    [
+        "workflow",
+        "DONE"
+    ],
+    [
+        "needed_outputs",
+        [
+            "out_file"
+        ]
+    ]
+]
