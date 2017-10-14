@@ -1,2 +1,0 @@
-Subject,Scan,MeanFD_Power,MeanFD_Jenkinson,NumFD_greater_than_0.20,rootMeanSquareFD,FDquartile(top1/4thFD),PercentFD_greater_than_0.20,MeanDVARS
-sub-0001_ses-1,task-resting_run-02,0.0876,0.0511,7.0000,0.2261,0.1168,5.7851,38.8040
