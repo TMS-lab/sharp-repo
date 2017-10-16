@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with XNAT using PyXNAT &mdash; SHARP Data Repository 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SHARP Data Repository 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Working with EEG data" href="Working_with_EEG_data.html"/>
+        <link rel="prev" title="Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SHARP Data Repository
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Working with XNAT using PyXNAT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-pyxnat-module">Download PyXNAT Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-server-enter-user-password">Connect to server: Enter user : password</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#different-types-of-datatypes-supported-by-xnat">Different types of datatypes supported by XNAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-number-of-subject">Check number of Subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-project">Loading the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-subject-data">Working with Subject Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-mri-session-data">Working with MRI Session Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtering-using-behavioral-scores">Filtering using Behavioral scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-the-selective-data">Downloading the selective data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Working_with_EEG_data.html">Working with EEG data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html">Definitions for Parameters Listed in the Generated Data for EEG and RobotFactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Definations_Phase1B.html#parser-file-rf-triggers">Parser File “rf-triggers”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mriqc.html">MRIQC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mriqc.html#sharp-data-reposts">SHARP Data Reposts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpac.html">C-PAC BIDS Application for SHARP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">Publications</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SHARP Data Repository</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Working with XNAT using PyXNAT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Sharp_Working_Guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="working-with-xnat-using-pyxnat">
+<h1>Working with XNAT using PyXNAT<a class="headerlink" href="#working-with-xnat-using-pyxnat" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download-pyxnat-module">
+<h2>Download PyXNAT Module<a class="headerlink" href="#download-pyxnat-module" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pyxnat
+</pre></div>
+</div>
+<div class="section" id="connect-to-server-enter-user-password">
+<h3>Connect to server: Enter user : password<a class="headerlink" href="#connect-to-server-enter-user-password" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxnat</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># connect to XNAT instance</span>
+<span class="kn">from</span> <span class="nn">pyxnat</span> <span class="kn">import</span> <span class="n">Interface</span>
+<span class="n">xnat</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s1">&#39;http://sharp.bidmc.harvard.edu:8080&#39;</span><span class="p">,</span>  <span class="n">cachedir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+<span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">projects</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="different-types-of-datatypes-supported-by-xnat">
+<h2>Different types of datatypes supported by XNAT<a class="headerlink" href="#different-types-of-datatypes-supported-by-xnat" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">xnat</span><span class="o">.</span><span class="n">inspect</span><span class="o">.</span><span class="n">datatypes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-number-of-subject">
+<h2>Check number of Subject<a class="headerlink" href="#check-number-of-subject" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">subjects</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;/projects/FAST/subjects&#39;</span><span class="p">)</span>
+<span class="n">subjects</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-the-project">
+<h2>Loading the project<a class="headerlink" href="#loading-the-project" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s1">&#39;FAST&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="working-with-subject-data">
+<h2>Working with Subject Data<a class="headerlink" href="#working-with-subject-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">contraints</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;xnat:subjectData/SUBJECT_ID&#39;</span><span class="p">,</span><span class="s1">&#39;LIKE&#39;</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">),</span>
+                  <span class="s1">&#39;AND&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;xnat:subjectData/PROJECT&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;FAST&#39;</span><span class="p">)</span>
+              <span class="p">]</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;xnat:subjectData&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;xnat:subjectData/SUBJECT_LABEL&#39;</span><span class="p">,</span><span class="s1">&#39;xnat:subjectData/PROJECT&#39;</span><span class="p">,</span><span class="s1">&#39;xnat:subjectData/SUBJECT_ID&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">contraints</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="working-with-mri-session-data">
+<h2>Working with MRI Session Data<a class="headerlink" href="#working-with-mri-session-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">contraints</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;xnat:mrSessionData/ID&#39;</span><span class="p">,</span><span class="s1">&#39;LIKE&#39;</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">),</span>
+                  <span class="s1">&#39;AND&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;xnat:subjectData/PROJECT&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;FAST&#39;</span><span class="p">)</span>
+             <span class="p">]</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;xnat:mrSessionData&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;xnat:mrSessionData/SUBJECT_LABEL&#39;</span><span class="p">,</span><span class="s1">&#39;xnat:mrSessionData/SESSION_ID&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">contraints</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">table1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-using-behavioral-scores">
+<h2>Filtering using Behavioral scores<a class="headerlink" href="#filtering-using-behavioral-scores" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">contraints</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;xnat:subjectData/SUBJECT_ID&#39;</span><span class="p">,</span><span class="s1">&#39;LIKE&#39;</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">&#39;behavioral:scores/VocabScore&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">,</span> <span class="s1">&#39;36&#39;</span><span class="p">),</span>
+                  <span class="s1">&#39;AND&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;xnat:subjectData/PROJECT&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;FAST&#39;</span><span class="p">)</span>
+             <span class="p">]</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;xnat:subjectData&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">contraints</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="downloading-the-selective-data">
+<h2>Downloading the selective data<a class="headerlink" href="#downloading-the-selective-data" title="Permalink to this headline">¶</a></h2>
+<p>Lets start with download data for one subject</p>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="n">subject</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s1">&#39;FAST&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">subject</span><span class="p">(</span><span class="s1">&#39;0001&#39;</span><span class="p">)</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="n">subject</span><span class="o">.</span><span class="n">experiment</span><span class="p">(</span><span class="s2">&quot;SHARP_E00746&quot;</span><span class="p">)</span>
+<span class="n">allscans</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">scans</span><span class="p">()</span>
+<span class="n">allscans</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;/tmp&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ALL&#39;</span><span class="p">,</span> <span class="n">extract</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now lets write a filer to download the selective data for all the
+subjects</p>
+<div class="highlight-ipython2"><div class="highlight"><pre><span></span><span class="c1"># Filer can be developed based on the data parameters</span>
+<span class="n">contraints</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;xnat:mrSessionData/ID&#39;</span><span class="p">,</span><span class="s1">&#39;LIKE&#39;</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">),</span>
+                  <span class="s1">&#39;AND&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;xnat:subjectData/PROJECT&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;FAST&#39;</span><span class="p">)</span>
+
+<span class="n">list_subjects</span> <span class="o">=</span> <span class="n">xnat</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s1">&#39;FAST&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">subjects</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">contraints</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">list_subject</span> <span class="ow">in</span> <span class="n">list_subjects</span><span class="p">:</span>
+    <span class="n">list_experiments</span> <span class="o">=</span> <span class="n">list_subject</span><span class="o">.</span><span class="n">experiments</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">contraints</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">list_experiment</span> <span class="ow">in</span> <span class="n">list_experiments</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">list_experiment</span>
+        <span class="n">scans</span> <span class="o">=</span> <span class="n">list_experiment</span><span class="o">.</span><span class="n">scans</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Number 2 is for Anatomical data. Similar types can be set for other data types</span>
+            <span class="n">scans</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;/tmp&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">extract</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s2">&quot;There are no scans to download&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Working_with_EEG_data.html" class="btn btn-neutral float-right" title="Working with EEG data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Strengthening Human Adaptive Reasoning and Problem-Solving (SHARP) Repository documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Raminder.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
